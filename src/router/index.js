@@ -5,7 +5,7 @@ import BasicLayout from '@/layouts/BasicLayout'
 import CompanyLayout from '@/layouts/CompanyLayout'
 
 import Login from '@/components/Login'
-import Settings from '@/components/Settings'
+import Settings from '@/components/settings/Index'
 // import Construction from '@/components/Construction'
 import Assignments from '@/components/assignments/Assignments'
 // import Construction3 from '@/components/Construction3'
