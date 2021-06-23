@@ -1,6 +1,6 @@
 # team7
 
-> A Vue.js project
+> Live preview at https://cashmisa.github.io/wwcode/
 
 ## Build Setup
 
