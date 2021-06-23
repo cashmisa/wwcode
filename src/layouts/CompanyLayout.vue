@@ -10,7 +10,7 @@
       app
     >
       <v-list>
-        <span v-for="i in items" :key="i">
+        <span v-for="i in items" :key="i.title">
         <v-list-tile   
         :to="i.path"
         v-if="!i.children">
@@ -38,10 +38,10 @@
           <v-list-tile
           class="navtile"
           v-for="c in i.children"
-          :key="c"
+          :key="c.title"
           :to="c.path">
           <v-list-tile-action>
-            <icon>{{c.icon}}</icon>
+            <v-icon>{{c.icon}}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>
@@ -87,36 +87,48 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       clipped: true,
       drawer: true,
       fixed: false,
       items: [
-          {icon: 'assignments', title: 'All Jobs', path:"/"},
-          {icon: 'group', title: 'Applicants', children:[
-            {title:"All Applicants", path: '/applicant'}
-          ]},
-          {icon: 'people_outline', title: 'Talent Pool', children:[
-            {title:"All Talents", path: '/talent'}
-          ]},
-          {icon: 'assessment', title: 'Assessments', children:[
-            {title:"Create Assignment", path:"/assignment/create"},
-            {title:"All Assignment", path:"/assignment"}
-          ]},
-          {icon: 'settings', title: 'Settings', path: '/settings'},
-        ],
+        { icon: "assignments", title: "All Jobs", path: "/" },
+        {
+          icon: "group",
+          title: "Applicants",
+          children: [
+            { title: "All Applicants", path: "/applicant" }
+          ]
+        },
+        {
+          icon: "people_outline",
+          title: "Talent Pool",
+          children: [
+            { title: "All Talents", path: "/talent" }
+          ]
+        },
+        {
+          icon: "assessment",
+          title: "Assessments",
+          children: [
+            { title: "Create Assignment", path: "/assignment/create" },
+            { title: "All Assignment", path: "/assignment/list" }
+          ]
+        },
+        { icon: "settings", title: "Settings", path: "/settings" }
+      ],
 
       miniVariant: false,
-      title: 'TechFolio'
-    }
+      title: "TechFolio"
+    };
   },
-  name: 'App'
-}
+  name: "App"
+};
 </script>
 
 <style scoped>
-.navtile{
+.navtile {
   color: white;
 }
 </style>

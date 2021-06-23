@@ -74,6 +74,7 @@ import firebase from 'firebase'
 import JobsData from './JobsData'
 
   export default {
+    name: 'Jobs',
     components: {DetailsDialog, NewJob},
     data(){
       return {

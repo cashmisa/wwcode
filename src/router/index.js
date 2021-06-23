@@ -7,7 +7,7 @@ import CompanyLayout from '@/layouts/CompanyLayout'
 import Login from '@/components/Login'
 import Settings from '@/components/Settings'
 // import Construction from '@/components/Construction'
-// import Construction2 from '@/components/Construction2'
+import Assignments from '@/components/assignments/Assignments'
 // import Construction3 from '@/components/Construction3'
 import UnderConstruction from '@/components/UnderConstruction'
 
@@ -33,9 +33,9 @@ export default new Router({
       }
     },
     {
-      path: '/assignment',
+      path: '/assignment/list',
       components: {
-        default:UnderConstruction,
+        default:Assignments,
         layout:CompanyLayout
       }
     },
