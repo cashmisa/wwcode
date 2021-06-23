@@ -22,7 +22,7 @@
   </v-combobox>
   <v-card>
     <v-layout wrap>
-      <flex xs4 v-for="i in selectedItems" style="min-width:250px" :key="i.id">
+      <div xs4 v-for="i in selectedItems" style="min-width:250px" :key="i.id">
         <v-card dark class="ma-2 pa-2">
           {{ i.id }}
           <v-card-text>
@@ -38,7 +38,7 @@
             <v-spacer/>
           </v-card-actions>
         </v-card>
-      </flex>
+      </div>
     </v-layout>
   </v-card>
 </v-container>

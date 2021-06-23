@@ -5,7 +5,7 @@
       <v-card>
         <v-toolbar color="cyan" dark>
 
-          <v-toolbar-title>Assignments as of today</v-toolbar-title>
+          <v-toolbar-title>Assignments issued</v-toolbar-title>
           <v-spacer></v-spacer>
 
           <v-btn icon>
@@ -91,7 +91,6 @@ export default {
   filters: {
     formatDateTime (val) {
       if (val) {
-        console.log(val)
         console.log(moment(String(val)))
         return moment(String(val)).format('MM/DD/YYYY hh:mm')
     }

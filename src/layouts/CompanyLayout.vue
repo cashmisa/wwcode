@@ -10,7 +10,7 @@
       app
     >
       <v-list>
-        <span v-for="i in items" :key="i.title">
+        <span v-for="i in menuItems" :key="i.title">
         <v-list-tile   
         :to="i.path"
         v-if="!i.children">
@@ -31,23 +31,24 @@
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>
-                {{ i.title }}
+                {{ i.title }} <v-icon v-if="!i.ready" size="small" color="grey">build</v-icon>
               </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
           <v-list-tile
-          class="navtile"
-          v-for="c in i.children"
-          :key="c.title"
-          :to="c.path">
-          <v-list-tile-action>
-            <v-icon>{{c.icon}}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>
-              {{ c.title }}
-            </v-list-tile-title>
-          </v-list-tile-content>
+            class="navtile"
+            v-for="c in i.children"
+            :key="c.title"
+            :to="c.path">
+              <v-list-tile-action>
+                <v-icon>{{c.icon}}</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>
+                  {{ c.title }}
+                  <v-icon v-if="!c.ready" size="small" color="grey">build</v-icon>
+                </v-list-tile-title>
+            </v-list-tile-content>
           </v-list-tile>
         </v-list-group>
         </span>
@@ -60,9 +61,6 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer/>
-      <!-- <v-toolbar-items>
-          <v-btn flat v-for="(m,i) in menu" :to="m.path" :key="i">{{m.title}}</v-btn>
-      </v-toolbar-items> -->
       <v-spacer/>
 
         <v-menu offset-y>
@@ -92,28 +90,28 @@ export default {
       clipped: true,
       drawer: true,
       fixed: false,
-      items: [
+      menuItems: [
         { icon: "assignments", title: "All Jobs", path: "/" },
         {
           icon: "group",
           title: "Applicants",
           children: [
-            { title: "All Applicants", path: "/applicant" }
+            { title: "All Applicants", path: "/applicant"}
           ]
         },
         {
           icon: "people_outline",
           title: "Talent Pool",
-          children: [
-            { title: "All Talents", path: "/talent" }
-          ]
+          ready: true,
+          children: [{ title: "All Talents", path: "/talent", ready: true }]
         },
         {
           icon: "assessment",
           title: "Assessments",
+          ready: true,
           children: [
             { title: "Create Assignment", path: "/assignment/create" },
-            { title: "All Assignment", path: "/assignment/list" }
+            { title: "All Assignment", path: "/assignment/list", ready: true }
           ]
         },
         { icon: "settings", title: "Settings", path: "/settings" }
