@@ -1,7 +1,7 @@
 # team7
 
-a quick and dirty prove of concept app done at wwcode hackathon 2018
-using vuetify v1 (deprecated and archived) therefore some features not supported anymore
+* a quick and dirty prove of concept app done at wwcode hackathon 2018
+* using vuetify v1 (deprecated and archived) therefore some features not supported anymore
 
 > Live preview at https://cashmisa.github.io/wwcode/
 
